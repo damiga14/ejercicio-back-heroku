@@ -1,10 +1,18 @@
+
 var express = require('express')
 
 var app = express()
 
 var request = require('request')
 
-app.listen(8001)
+var port = process.env.PORT || 3000;
+
+app.get('/', function (req, res) {
+ res.send(JSON.stringify({ Hello: 'World'}));
+});
+app.listen(port, function () {
+ console.log(`Example app listening on port !`);
+});
 
 /*
 1.- Agrega un endpoint '/api/' que responda a
