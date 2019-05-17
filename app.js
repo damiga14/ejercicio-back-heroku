@@ -10,9 +10,7 @@ var port = process.env.PORT || 3000;
 app.get('/', function (req, res) {
  res.send(JSON.stringify({ Hello: 'World'}));
 });
-app.listen(port, function () {
- console.log(`Example app listening on port !`);
-});
+
 
 /*
 1.- Agrega un endpoint '/api/' que responda a
@@ -132,3 +130,11 @@ app.get(`/pokemon/:id`, function(req, res)
             .catch(error=>res.sendFile(path.join(__dirname + `/pokemon/noencontrado.html`)))
     })
 })
+
+
+
+
+
+app.listen(port, function () {
+    console.log(`Example app listening on port ${port}`);
+   });
